@@ -9,5 +9,5 @@ function add(numbers: string): number {
 
     return numbers.split(',')
     .map((n) => parseInt(n))
-    .reduce((sum, val) => sum + val, 0)
-}
+    .reduce((sum, val) => sum + val, 0);
+}   
