@@ -8,6 +8,7 @@ function add(numbers: string): number {
     }
 
     return numbers.split(',')
+    .filter((n) => n)
     .map((n) => parseInt(n))
     .reduce((sum, val) => sum + val, 0);
 }   
