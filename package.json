@@ -1,0 +1,19 @@
+{
+  "name": "simple-calc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Brendan Desjarlais",
+  "license": "MIT",
+  "private": null,
+  "scripts": {
+    "test": "mocha -r ts-node/register tests/**/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  }
+}
