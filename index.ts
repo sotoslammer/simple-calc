@@ -7,7 +7,7 @@ function add(numbers: string): number {
         return 0;
     }
 
-    return numbers.split(',')
+    return numbers.split(/\n|,/)
     .filter((n) => n)
     .map((n) => parseInt(n))
     .reduce((sum, val) => sum + val, 0);

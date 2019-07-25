@@ -20,5 +20,17 @@ describe('simple add', () => {
         result = calc.add(',')
         expect(result).equal(0);
     });
-    
+    it('it sums numbers with newline present', () => {
+        var result = calc.add('1\n,2,3');
+        expect(result).equal(6);
+
+        result = calc.add('1,\n2,4')
+        expect(result).equal(7);
+
+        result = calc.add('\n')
+        expect(result).equal(0);
+
+        result = calc.add(',\n')
+        expect(result).equal(0);
+    });
 });
