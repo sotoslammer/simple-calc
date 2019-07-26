@@ -20,7 +20,7 @@ function add(numbers: string): number {
 
 function delimeter(numbers: string): string {
 	if (numbers.startsWith('//')) {
-		return numbers.slice(2)[0];
+		return numbers.match(new RegExp('^\/{2}(.+)\\n', 'gm')).join();
 	} else {
 		return ',';
 	}

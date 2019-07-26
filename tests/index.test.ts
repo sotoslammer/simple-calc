@@ -56,4 +56,7 @@ describe('simple add', () => {
     it('should allow arbitary length delimeters', () => {
         expect(calc.add('//***\n1***2***3')).equal(6);
     });
+    it('should allow for multiple delimeters', () => {
+        expect(calc.add('//$,@\n1$2@3')).equal(6);
+    });
 });
