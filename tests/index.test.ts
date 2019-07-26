@@ -52,5 +52,8 @@ describe('simple add', () => {
 
         results = calc.add('2,1001');
         expect(results).equal(2);
-    })
+    });
+    it('should allow arbitary length delimeters', () => {
+        expect(calc.add('//***\n1***2***3')).equal(6);
+    });
 });
