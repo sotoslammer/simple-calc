@@ -13,7 +13,8 @@ function add(numbers: string): number {
 	return numbers
 		.split(pattern)
 		.filter((n) => n && !isNaN(+n))
-		.map((n) => parseInt(n))
+        .map((n) => parseInt(n))
+        .filter((n) => n <= 1000)
 		.reduce((sum, val) => sum + val, 0);
 }
 
