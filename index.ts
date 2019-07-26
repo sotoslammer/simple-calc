@@ -9,9 +9,8 @@ function add(numbers: string): number {
     
     checkForNegatives(numbers);
 
-	const pattern = new RegExp(`[${delimeter(numbers)}\n]+`);
 	return numbers
-		.split(pattern)
+		.split(new RegExp(`[${delimeter(numbers)}\n]+`))
 		.filter((n) => n && !isNaN(+n))
         .map((n) => parseInt(n))
         .filter((n) => n <= 1000)
