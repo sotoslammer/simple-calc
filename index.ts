@@ -5,7 +5,9 @@ export function Calculator() {
 function add(numbers: string): number {
 	if (numbers === '') {
 		return 0;
-	}
+    }
+    
+    checkForNegatives(numbers);
 
 	const pattern = new RegExp(`[${delimeter(numbers)}\n]+`);
 	return numbers
@@ -21,4 +23,11 @@ function delimeter(numbers: string): string {
 	} else {
 		return ',';
 	}
+}
+
+function checkForNegatives(numbers: string) {
+    const negatives = numbers.match(/\-[1-9]\d{0,3}/g);
+    if (negatives && negatives.length > 0) {
+        throw new Error(`Negatives are not allowed: ${negatives.join(',')}`);
+    }
 }

@@ -40,4 +40,10 @@ describe('simple add', () => {
         result = calc.add('//@\n2@3@8');
         expect(result).equal(13);
     })
+    it('does not support negative numbers', () => {
+        expect(() => calc.add('-1')).to.throw('Negatives are not allowed: -1');
+        expect(() => calc.add('1,-2,-1')).to.throw('Negatives are not allowed: -2,-1');
+        expect(() => calc.add('1\n,-10')).to.throw('Negatives are not allowed: -10');
+        expect(() => calc.add('//$\n1$-100$2')).to.throw('Negatives are not allowed: -100');
+    })
 });
